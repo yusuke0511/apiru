@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "apiru-dev": "apiru-dev",
+    "apiru-prod": "apriru-prod"
+  }
+}

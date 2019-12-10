@@ -1,29 +1,68 @@
-# app-info
+# apiru
+アプリケーションをPRすることができるWebアプリケーション
 
-## Project setup
-```
-npm install
-```
+## Firebaseの設定
+main.jsにfirebaseConfigがあります。
+適当な名前のプロジェクトを作ってWebアプリの登録を行えばConfigの構成を取得できるはずなので
+ご自身のfirebase環境に合わせて書き換えてください。
 
-### Compiles and hot-reloads for development
+## セッティング
+### UIフレームワークの追加
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+vue add vuetify
 ```
 
-### Run your tests
+### アイコンを使う
 ```
-npm run test
+npm install material-design-icons-iconfont -D
+```
+※[Material Design Icons](https://materialdesignicons.com/)
+```
+npm install @mdi/font
 ```
 
-### Lints and fixes files
+### Vuelidateを使う
 ```
-npm run lint
+npm install vuelidate --save
 ```
+
+### 画像を反転させるライブラリ
+```
+npm install --save blueimp-load-image
+```
+
+### router
+```
+npm install vue-router
+```
+
+### Firebaseを使う
+```
+npm install --save firebase
+npm install -g firebase-tools
+```
+
+### Firebaseのホスティングにデプロイ
+```
+firebase login
+firebase init
+firebase deploy
+```
+### Firebaseのデプロイ先を切り替える
+```
+firebase use (プロジェクト名)
+```
+
+### 認証系（Firebase）
+```
+npm install --save firebase
+npm install firebaseui —-save
+```
+
+### firebaseConfigの設定
+main.js内にfirebaseConfigがダミーになってます。
+アプリケーションを動かすためにFirebaseプロジェクトを作成し、ご自身のConfigを設定してください
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
