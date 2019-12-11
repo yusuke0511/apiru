@@ -72,6 +72,7 @@
           @change="$v.checkbox.$touch()"
           @blur="$v.checkbox.$touch()"
         ></v-checkbox>
+        <v-btn color="primary" text href="../assets/html/kiyaku.html" target="blank"/>
     
         <v-btn v-if="isNewData"
           color="deep-purple accent-4"

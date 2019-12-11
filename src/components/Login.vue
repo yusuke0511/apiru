@@ -130,12 +130,24 @@ export default {
         this.dialog1 = true
         this.errorMsg = "既にユーザーが登録されています"
       } else {
-        await firebase.auth().currentUser.sendEmailVerification({
-          url: 'https://apiru-dev.firebaseapp.com/index',
-          handleCodeInApp: false,
+        var sendResult = await firebase.auth().currentUser.sendEmailVerification({
+          url: 'https://apiru-prod.firebaseapp.com/index',
+          handleCodeInApp: false, 
+        })
+        .then(function() {
+          console.log("Send Mail Success!!")
+          return 0
+        })
+        .catch(function(error) {
+          return error.message
         });
-        firebase.auth().signOut().then(()=>{})
-        this.dialog2 = true
+        if (sendResult != 0) {
+          this.dialog1 = true
+          this.errorMsg = sendResult
+        } else {
+          this.dialog2 = true
+        }
+        await firebase.auth().signOut()
       }
     },
     submit () {
