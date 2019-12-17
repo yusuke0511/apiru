@@ -29,8 +29,8 @@
         {{errorMsg}}
       </v-alert>
       <v-alert :value="dialog2" type="success">
-        メールを送信いたしました。
-        メールの内容をご確認ください。
+        ユーザー登録が完了しました。
+        「ログイン」ボタンを押下してご利用ください。
       </v-alert>
       
       <v-row justify="center">
@@ -131,7 +131,7 @@ export default {
         this.errorMsg = "既にユーザーが登録されています"
       } else {
         var sendResult = await firebase.auth().currentUser.sendEmailVerification({
-          url: 'https://apiru-prod.firebaseapp.com/index',
+          url: 'https://apiru-dev.firebaseapp.com/index',
           handleCodeInApp: false, 
         })
         .then(function() {
